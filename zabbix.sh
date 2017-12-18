@@ -5,7 +5,7 @@ echo "乐开景云计算:https://yun.lekaijing.com"
 echo "宝塔面板环境下安装zabbix一键脚本";
 echo "+---------------------------------------+";
 pwd=`pwd`;
-zabbix_url="https://raw.githubusercontent.com/starwulizhang/zabbix/master/code/";
+zabbix_url="http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.4.4/";
 zabbix_d="zabbix-3.4.4";
 zabbix_v="zabbix-3.4.4.tar.gz";
 read -p "输入数据库密码:" zabbix_pass
