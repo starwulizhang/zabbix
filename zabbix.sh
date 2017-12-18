@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "+---------------------------------------+";
-echo "time:2017/09/24";
-echo "tiewangwei website:http://www.tieww.com"
-echo "Combination baota linux panel installation zabbix script";
+echo "脚本更新时间:2017/09/24";
+echo "乐开景云计算:https://yun.lekaijing.com"
+echo "宝塔面板环境下安装zabbix一键脚本";
 echo "+---------------------------------------+";
 pwd=`pwd`;
 zabbix_url="http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.4.4/";
