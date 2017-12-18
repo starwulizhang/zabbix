@@ -5,13 +5,13 @@ echo "乐开景云计算:https://yun.lekaijing.com"
 echo "宝塔面板环境下安装zabbix一键脚本";
 echo "+---------------------------------------+";
 pwd=`pwd`;
-zabbix_url="http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.4.4/";
+zabbix_url="https://raw.githubusercontent.com/starwulizhang/zabbix/master/code/";
 zabbix_d="zabbix-3.4.4";
 zabbix_v="zabbix-3.4.4.tar.gz";
-read -p "Enter zabbix database password:" zabbix_pass
-read -p "zabbix site directory, for example (/www/default):" webdir
+read -p "输入数据库密码:" zabbix_pass
+read -p "zabbix网站目录(/www/default):" webdir
 if [[ "$webdir" == "" ]] || [[ ! -e $webdir ]]; then
-echo "The input directory is empty or does not exist.";
+echo "目录不存在";
 exit
 fi
 yum install net-snmp-devel curl curl-devel -y
