@@ -5,9 +5,9 @@ echo "tiewangwei website:http://www.tieww.com"
 echo "Combination baota linux panel installation zabbix script";
 echo "+---------------------------------------+";
 pwd=`pwd`;
-zabbix_url="http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.0.1/";
-zabbix_d="zabbix-3.0.1";
-zabbix_v="zabbix-3.0.1.tar.gz";
+zabbix_url="http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.4.4/";
+zabbix_d="zabbix-3.4.4";
+zabbix_v="zabbix-3.4.4.tar.gz";
 read -p "Enter zabbix database password:" zabbix_pass
 read -p "zabbix site directory, for example (/www/default):" webdir
 if [[ "$webdir" == "" ]] || [[ ! -e $webdir ]]; then
@@ -55,12 +55,12 @@ sed -i 's/^# AlertScriptsPath=${datadir}\/\zabbix\/a\lertscripts/AlertScriptsPat
 
 sed -i '0,/# Include=/{//s/.*/Include=\/u\sr\/l\ocal\/\zabbix\/\etc\/\zabbix_agentd.conf.d\/\ \n&/}' /usr/local/zabbix/etc/zabbix_agentd.conf
 sed -i '/# UnsafeUserParameters=0/a\UnsafeUserParameters=1' /usr/local/zabbix/etc/zabbix_agentd.conf
-cp $pwd/zabbix-3.0.1/misc/init.d/fedora/core/zabbix_server /etc/rc.d/init.d/zabbix_server
-cp $pwd/zabbix-3.0.1/misc/init.d/fedora/core/zabbix_agentd /etc/rc.d/init.d/zabbix_agentd
+cp $pwd/zabbix-3.4.4/misc/init.d/fedora/core/zabbix_server /etc/rc.d/init.d/zabbix_server
+cp $pwd/zabbix-3.4.4/misc/init.d/fedora/core/zabbix_agentd /etc/rc.d/init.d/zabbix_agentd
 chmod +x /etc/rc.d/init.d/zabbix_server && chmod +x /etc/rc.d/init.d/zabbix_agentd
 chkconfig zabbix_server on && chkconfig zabbix_agentd on
 sed -i "1a BASEDIR=/usr/local/zabbix/" /etc/rc.d/init.d/zabbix_server /etc/rc.d/init.d/zabbix_agentd
-cp -r $pwd/zabbix-3.0.1/frontends/php/* $webdir/
+cp -r $pwd/zabbix-3.4.4/frontends/php/* $webdir/
 chattr -i $webdir/.user.ini
 chown www.www -R $webdir/
 chattr +i $webdir/.user.ini
